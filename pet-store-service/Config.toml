@@ -1,0 +1,9 @@
+hostEp = "localhost"
+port = 9090
+
+[databaseConfig]
+database = "pet_store_database"
+user = "dev_user"
+password = "md83e24"
+host = "dev.sql.com"
+port = 3306

@@ -1,0 +1,9 @@
+hostEp = "localhost"
+port = 9090
+
+[databaseConfig]
+database = "pet_store_database"
+user = "root"
+password = "root123!"
+host = "localhost"
+port = 3306

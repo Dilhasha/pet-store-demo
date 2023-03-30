@@ -1,0 +1,7 @@
+[package]
+org = "dilhasha"
+name = "petstore"
+version = "1.0.1"
+
+[build-options]
+observabilityIncluded = true
