@@ -2,7 +2,8 @@ import ballerina/http;
 import ballerina/test;
 
 @test:Config {
-    dataProvider:  petData
+    dataProvider:  petData,
+    groups: ["addPet"]
 }
 function testPetData(json petDetails, int expectedStatusCode, string|json expectedMsg) returns error? {
     http:Response response = check petStoreClient->/pet.post(petDetails);
@@ -30,7 +31,9 @@ function petData() returns map<[json, int, string|json]>|error {
 # Add pet details in an invalid data type.
 #
 # + return - Return an error or nil if there is no error   
-@test:Config {}
+@test:Config {
+    groups: ["addPet"]
+}
 function addPetAsString() returns error? {
     // Pass pet details in string format
     http:Response response = check petStoreClient->/pet.post("Invalid pet details in string format");

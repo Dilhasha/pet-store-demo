@@ -6,7 +6,9 @@ http:Client petStoreClient = check new ("http://localhost:9090");
 # Get pet details for a non existent pet id.
 #
 # + return - Return an error or nil if there is no error  
-@test:Config {}
+@test:Config {
+    groups: ["getPet"]
+}
 function getNonExistentPet() returns error? {
     http:Response response = check petStoreClient->get("/pet/FISH0028");
     // Asserts the expected status code
@@ -19,7 +21,8 @@ function getNonExistentPet() returns error? {
 #
 # + return - Return an error or nil if there is no error
 @test:Config {
-    dependsOn: [testPetData]
+    dependsOn: [testPetData],
+    groups: ["getPet"]
 }
 function getExistingPet() returns error? {
     // Get resource function returns http:Response or http:ClientError
